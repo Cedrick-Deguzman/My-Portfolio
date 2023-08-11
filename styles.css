@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.border-top-20 {
+    border-top: 20px solid #000; /* Adjust color and other properties as needed */
+}
+
+.nav-link.active {
+    color: #0011ff; /* Set the color to a darker shade, such as dark gray */
+    font-weight: bold; /* You can adjust this based on your design preference */
+}
+
+.project-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    width: 150px;
+    border: 1px solid #ddd; /* Add a border around the image */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin: 20px auto; /* Center the image and add margin */
+}
+
+.navbar-nav .nav-item:hover .nav-link {
+    color: #007bff; /* Change to the desired hover color */
+}

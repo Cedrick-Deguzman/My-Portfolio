@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cedrick De Guzman - Web Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to your custom CSS file if needed -->
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Jonald Cedrick De Guzman</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>        
+    </nav>
+
+    <section id="about" class="py-5 border-top-20">
+        <div class="container">
+            <h1>Hi, My name is Cedrick!</h1>
+            <p>I love creating Web.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h1 class="mb-5">Skills</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-2 col-6 mb-4">
+                    <i class="fab fa-html5 fa-5x"></i>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <i class="fab fa-js fa-5x"></i>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <i class="fab fa-react fa-5x"></i>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <i class="fas fa-database fa-5x"></i>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <i class="fas fa-fire fa-5x"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="project" class="py-5">
+        <div class="container">
+            <h1 class="mb-5">Projects</h1>
+            <h3>Mobile App</h3>
+            <div>
+                <img class="project-image" src="images/One.png" alt="One">
+                <p>Introducing "ONE - Onwards to New Evangelization" an app for daily spiritual nourishment. Immerse yourself in scripture readings, listen to enriching prayers and audio content, and explore insightful Bible blogs and videos. Deepen your spiritual journey and find inspiration in the palm of your hand with "ONE".</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-5">
+        <div class="container">
+            <h1 class="mb-5">Experience</h1>
+            <h6>January 2023 - May 2023</h6>
+            <h4>Intern Experience</h4>
+            <h6>Dr.Yanga's College</h6>
+            <ul>
+                <li>Role: IT Intern</li>
+                <li>Worked on a mobile app project called "ONE" for Dr. Yanga's Colleges</li>
+                <li>Developed a simple mobile app for religious individuals to watch sharing videos and listen to prayers</li>
+                <li>Utilized React Native and Firebase for app development and backend functionality</li>
+                <li>Assisted in designing and implementing user interface components</li>
+                <li>Collaborated with a team to ensure the successful completion of the project</li>
+            </ul>
+        </div>
+
+    </section>
+    <section id="contact" class="py-5 mt-5">
+        <div class="container">
+            <h1 class="mb-5">Contact</h1>
+            <div class="d-flex justify-content-between">
+                <div class="col-md-2">
+                    <a href="https://www.facebook.com/cedrickdeguzman89" target="_blank">
+                        <i class="fa-brands fa-facebook fa-5x"></i>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a href="https://github.com/Cedrick-Deguzman" target="_blank" class="text-dark">
+                        <i class="fa-brands fa-github fa-5x"></i>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a href="https://www.linkedin.com/in/cedrick-deguzman-a9533b247/" target="_blank">
+                    <i class="fa-brands fa-linkedin fa-5x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center">
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Link to your custom JavaScript file if needed -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to the navigation item corresponding to the currently viewed section
+        function scrollSpy() {
+            const scrollPosition = window.scrollY;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const offsetTop = rect.top + scrollPosition;
+                const offsetBottom = offsetTop + rect.height;
+
+                if (offsetTop <= 200 && offsetBottom >= 150) {
+                    const id = section.getAttribute('id');
+                    const navItem = document.querySelector(`.nav-link[href="#${id}"]`);
+
+                    if (navItem) {
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        navItem.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', scrollSpy);
+        window.addEventListener('load', scrollSpy);
+    </script>    
+</body>
+</html>
