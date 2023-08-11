@@ -10,8 +10,10 @@
     <!-- Link to your custom CSS file if needed -->
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">Jonald Cedrick De Guzman</a>
+    <div id="preloader"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="content">
+        <a class="navbar-brand" href="https://www.facebook.com/cedrickdeguzman89" target="_blank">Jonald Cedrick De Guzman</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,49 +28,49 @@
         </div>        
     </nav>
 
-    <section id="about" class="py-5 border-top-20">
+    <section id="about" class="section py-5">
         <div class="container">
             <h1>Hi, My name is Cedrick!</h1>
             <p>I love creating Web.</p>
         </div>
     </section>
 
-    <section id="skills" class="py-5">
+    <section id="skills" class="section py-5">
         <div class="container">
             <h1 class="mb-5">Skills</h1>
             <div class="row justify-content-center">
-                <div class="col-md-2 col-6 mb-4">
-                    <i class="fab fa-html5 fa-5x"></i>
+                <div class="col-md-2 col-4 mb-4">
+                    <i class="fab fa-html5 fa-5x" style="color: #E34F26;"></i>
                 </div>
-                <div class="col-md-2 col-6 mb-4">
-                    <i class="fab fa-js fa-5x"></i>
+                <div class="col-md-2 col-4 mb-4">
+                    <i class="fab fa-js fa-5x" style="color: #F7DF1E;"></i>
                 </div>
-                <div class="col-md-2 col-6 mb-4">
-                    <i class="fab fa-react fa-5x"></i>
+                <div class="col-md-2 col-4 mb-4">
+                    <i class="fab fa-react fa-5x" style="color: #61DAFB;"></i>
                 </div>
-                <div class="col-md-2 col-6 mb-4">
-                    <i class="fas fa-database fa-5x"></i>
+                <div class="col-md-2 col-4 mb-4">
+                    <i class="fas fa-database fa-5x" style="color: #007ACC;"></i>
                 </div>
-                <div class="col-md-2 col-6 mb-4">
-                    <i class="fas fa-fire fa-5x"></i>
+                <div class="col-md-2 col-4 mb-4">
+                    <i class="fas fa-fire fa-5x" style="color: #FFA000;"></i>
                 </div>
             </div>
         </div>
     </section>
     
 
-    <section id="project" class="py-5">
+    <section id="project" class="section py-5">
         <div class="container">
             <h1 class="mb-5">Projects</h1>
             <h3>Mobile App</h3>
             <div>
-                <img class="project-image" src="images/One.png" alt="One">
+                <a href="https://play.google.com/store/apps/details?id=com.dyci_oneup.OneUpProject" target="_blank"><img class="project-image" src="images/One.png" alt="One"></a>
                 <p>Introducing "ONE - Onwards to New Evangelization" an app for daily spiritual nourishment. Immerse yourself in scripture readings, listen to enriching prayers and audio content, and explore insightful Bible blogs and videos. Deepen your spiritual journey and find inspiration in the palm of your hand with "ONE".</p>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-5">
+    <section id="experience" class="section py-5">
         <div class="container">
             <h1 class="mb-5">Experience</h1>
             <h6>January 2023 - May 2023</h6>
@@ -85,7 +87,7 @@
         </div>
 
     </section>
-    <section id="contact" class="py-5 mt-5">
+    <section id="contact" class="section py-5 mt-5">
         <div class="container">
             <h1 class="mb-5">Contact</h1>
             <div class="d-flex justify-content-between">
@@ -96,7 +98,7 @@
                 </div>
                 <div class="col-md-2">
                     <a href="https://github.com/Cedrick-Deguzman" target="_blank" class="text-dark">
-                        <i class="fa-brands fa-github fa-5x"></i>
+                        <i class="fa-brands fa-github fa-5x" style="color: black;"></i>
                     </a>
                 </div>
                 <div class="col-md-2">
@@ -127,32 +129,40 @@
                 });
             });
         });
+    </script>
+    <script>
+        // loading
+        var loader = document.querySelector("#preloader");
+        var mainContent = document.querySelector("#content");
 
-        // Add active class to the navigation item corresponding to the currently viewed section
-        function scrollSpy() {
-            const scrollPosition = window.scrollY;
-            
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const offsetTop = rect.top + scrollPosition;
-                const offsetBottom = offsetTop + rect.height;
+        // Show the preloader initially
+        loader.style.display = "block";
+        mainContent.style.display = "none";
 
-                if (offsetTop <= 200 && offsetBottom >= 150) {
-                    const id = section.getAttribute('id');
-                    const navItem = document.querySelector(`.nav-link[href="#${id}"]`);
+        // Delay the showing of the main content by 2 seconds (2000 milliseconds)
+        var contentDelay = 3000;
 
-                    if (navItem) {
-                        document.querySelectorAll('.nav-link').forEach(link => {
-                            link.classList.remove('active');
-                        });
-                        navItem.classList.add('active');
-                    }
+        // Hide the preloader and show the main content after the delay
+        setTimeout(function() {
+            loader.style.display = "none";
+            mainContent.style.display = "flex";
+        }, contentDelay);
+    </script>  
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show-section'); // Add class to trigger animation
+                    observer.unobserve(entry.target); // Unobserve after animation triggers once
                 }
             });
-        }
+        }, { threshold: 0.5 }); // Adjust threshold based on your preference
 
-        window.addEventListener('scroll', scrollSpy);
-        window.addEventListener('load', scrollSpy);
-    </script>    
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    </script>  
 </body>
 </html>
