@@ -41,7 +41,7 @@ body {
 }
 
 .section {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 3s ease; /* This will control the animation speed */
 }
 .show-section {
