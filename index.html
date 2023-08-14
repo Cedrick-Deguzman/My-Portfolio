@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Link to your custom CSS file if needed -->
 </head>
-<script src="/js/script.js"></script>
+<!-- <script src="/js/script.js"></script> -->
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="content">
         <a class="navbar-brand" href="https://www.facebook.com/cedrickdeguzman89" target="_blank">Jonald Cedrick De Guzman</a>
@@ -154,6 +154,33 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Link to your custom JavaScript file if needed -->
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show-section'); // Add class to trigger animation
+                    observer.unobserve(entry.target); // Unobserve after animation triggers once
+                }
+            });
+        }, { threshold: 0.5 }); // Adjust threshold based on your preference
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    </script>
 </body>
 </html>
