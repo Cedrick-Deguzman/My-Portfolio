@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Link to your custom CSS file if needed -->
 </head>
+<script src="/js/script.js"></script>
 <body>
     <div id="preloader"></div>
 
@@ -31,7 +32,7 @@
     <section id="about" class="section py-5">
         <div class="container">
             <h1>Hi, My name is Cedrick!</h1>
-            <p>I love creating Web.</p>
+            <p>I am currently Learning to be a Frontend Developer.</p>
         </div>
     </section>
 
@@ -87,7 +88,8 @@
         </div>
 
     </section>
-    <section id="contact" class="section py-5 mt-5">
+
+    <!-- <section id="contact" class="section py-5 mt-5">
         <div class="container">
             <h1 class="mb-5">Contact</h1>
             <div class="d-flex justify-content-between">
@@ -108,61 +110,52 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+    <section id="contact" class="section py-5">
+        <div class="container">
+            <h2 class="mb-4">Contact Me</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="https://formspree.io/f/mrgwpynq" method="POST">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="message" placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <div class="contact-info">
+                        <p>Email: jonaldcedrick.deguzman@gmail.com</p>
+                        <p>Phone: +63 939 223 8514</p>
+                        <div class="social-media">
+                            <a href="https://www.linkedin.com/your-profile" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://www.twitter.com/your-profile" class="btn btn-primary"><i class="fab fa-facebook"></i> Facebook</a>
+                            <a href="https://www.twitter.com/your-profile" class="btn btn-secondary"><i class="fab fa-github"></i> Github</a>
+                            <!-- Other social media links -->
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
     </section>
 
     <footer class="py-4 text-center">
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; 2023 Jonald Cedrick R. De Guzman. All rights reserved.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Link to your custom JavaScript file if needed -->
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-    
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-    <script>
-        // loading
-        var loader = document.querySelector("#preloader");
-        var mainContent = document.querySelector("#content");
-
-        // Show the preloader initially
-        loader.style.display = "block";
-        mainContent.style.display = "none";
-
-        // Delay the showing of the main content by 2 seconds (2000 milliseconds)
-        var contentDelay = 3000;
-
-        // Hide the preloader and show the main content after the delay
-        setTimeout(function() {
-            loader.style.display = "none";
-            mainContent.style.display = "flex";
-        }, contentDelay);
-    </script>  
-    <script>
-        const sections = document.querySelectorAll('.section');
-
-        const sectionObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show-section'); // Add class to trigger animation
-                    observer.unobserve(entry.target); // Unobserve after animation triggers once
-                }
-            });
-        }, { threshold: 0.5 }); // Adjust threshold based on your preference
-
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-    </script>  
 </body>
 </html>
