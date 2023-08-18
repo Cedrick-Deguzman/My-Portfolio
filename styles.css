@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-    color: white;
-}
-
 .nav-link.active {
     color: #0011ff; /* Set the color to a darker shade, such as dark gray */
     font-weight: bold; /* You can adjust this based on your design preference */
@@ -55,6 +51,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    color: white;
 }
 
 .side-nav {
