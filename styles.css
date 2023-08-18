@@ -3,7 +3,6 @@
 }
 
 body {
-    background-color: #4e5050;
     color: white;
 }
 
@@ -25,6 +24,9 @@ body {
     color: #007bff; /* Change to the desired hover color */
 }
 
+.navbar-nav .nav-item .nav-link {
+    color: white;
+}
 /* #preloader {
     background:black url(images/loading.gif) no-repeat center center;
     height: 100vh;
@@ -47,3 +49,57 @@ body {
 .show-section {
     opacity: 1;
 }
+
+body {
+    background-image: url('/images/background.jpg'); /* Replace with the actual image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.side-nav {
+    /* display: flex;
+    flex-direction: column-reverse; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: transparent;
+    color: white;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-nav li {
+    margin-bottom: 10px;
+}
+
+.side-nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.side-nav a:hover {
+    background-color: transparent;
+}
+
+.sidebar-nav li a {
+    font-size: 24px; /* Adjust the size to your preference */
+}
+.skills-section {
+    opacity: 0; /* Set initial opacity to 0 to make it invisible */
+    transform: translateX(-100px); /* Start the section outside the viewport */
+    transition: opacity 1s ease-in-out, transform 1s ease-in; /* Apply transition effects */
+}
+
+.skills-section.active {
+    opacity: 1; /* Change opacity to 1 to make it visible */
+    transform: translateX(0); /* Move the section to its original position */
+}
+
