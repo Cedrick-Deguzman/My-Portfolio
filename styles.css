@@ -47,7 +47,7 @@
 }
 
 body {
-    background-image: url('/images/background.jpg'); /* Replace with the actual image path */
+    background-image: url('images/background.jpg'); /* Replace with the actual image path */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
